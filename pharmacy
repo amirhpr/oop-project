@@ -1,0 +1,29 @@
+class Drug:
+    def __init__(self, name: str, amount: int, price: int):
+        self.name = name
+        self.amount = amount
+        self.price = price
+class Pharmacy:
+    def __init__(self, name: str):
+        self.name = name
+        self.drugs = []
+        self.employees = []
+    def add_drug(self, drug: Drug):
+        self.drugs.append(Drug)
+    def add_employee(self, first_name: str, last_name: str, age: int):
+        employee = {
+            "first_name": first_name,
+            "last_name": last_name,
+            "age": age
+        }
+        self.employees.append(employee)
+    def total_value(self) -> int:
+        total = 0
+        for drug in self.drugs:
+            total += drug['amount'] * drug['price']
+        return total
+    def employees_summary(self) -> str:
+        summary = "Employees:\n"
+        for i, employee in enumerate(self.employees, start=1):
+            summary += f"The employee number {i} is {employee['first_name']} {employee['last_name']} who is {employee['age']} years old.\n"
+        return summary 
